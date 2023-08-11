@@ -34,7 +34,7 @@ class CifraVigenere {
 }
 
 void main(List<String> args) {
-  CifraVigenere cifra = CifraVigenere('pirimpimpin');
+  CifraVigenere cifra = CifraVigenere('umasenhaqualquer');
   String texto = 'olamundodolowercasequefunciona';
   String textoCriptografado = cifra.encrypt(texto);
   print(textoCriptografado);
@@ -48,3 +48,7 @@ void main(List<String> args) {
     print('Ocorreu um Erro na classe');
   }
 }
+//dapbjcsdsdadltgrphtfjtujcrxdcp --->>> SAIDA PARA p
+//dtrugclaswydevzopaqfcrucekudvm --->>> SAIDA PARA pirimpimpin
+//dtrugclaswxdevzopaqfcqucekudvm --->>> SAIDA PARA pirimpimpim
+//ixaeyakotilzmyvtueeiyrmudwizdu --->>> SAIDA PARA uma senhaqualquer
