@@ -8,19 +8,19 @@
 //  Se o resto da divisão for maior ou igual a 2, então o dígito verificador é igual a 11 menos o resto da divisão (11 - resto).
 // O Resultado deve ser igual ao primeiro dígito verificador.
 // - Cálculo do segundo dígito verificar:
-// 1. Pegaremos os primeiros 10 dígitos do CPF (111.444.777-1) e multiplicamos cada um dos números, da direita para a esquerda por números crescentes a partir do número 2.
+// 1. Pegaremos os primeiros 10 dígitos do CPF (111.444.777-05) e multiplicamos cada um dos números, da direita para a esquerda por números crescentes a partir do número 2.
 // 2. Com o resultado em mãos, siga os passos 2, 3 e 4 do cálculo do primeiro dígito.
 // O Resultado deve ser igual ao segundo dígito verificador.
 
-String cpf = "111444999";
+String cpf = "111444777"; //- 05
 List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
 
 List<int> listDigit = [];
 List<int> listDigit2 = [];
-List<int> listMulplicada = [];
+List<int> listMultiplicada = [];
 void main(List<String> args) {
   // numbers.forEach((e) {
-  for (int j = 2; j <= (numbers.length + 1); j++) {
+  for (int j = 10; j >= 2; j--) {
     // int digitos = (e);
     // digitos = e * j;
     listDigit.add(j);
@@ -31,14 +31,17 @@ void main(List<String> args) {
   }
   for (int i = 0; i < listDigit2.length; i++) {
     int Multiplicador = listDigit[i] * listDigit2[i];
-    listMulplicada.add(Multiplicador);
+    listMultiplicada.add(Multiplicador);
   }
-
+  final sum = listMultiplicada.reduce((a, b) => a + b);
+  final int verify = sum % 11;
+  if (verify == 10) {
+    verify == 0;
+  }
+  print(sum);
+  print(verify);
   print(listDigit2);
-  print(listDigit);
-  print(listMulplicada);
-
-  print(numbers);
+  print(listMultiplicada);
 }
 
   // for (int i = 0; i < numbers.length; i++) {
