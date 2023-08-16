@@ -12,11 +12,12 @@
 // 2. Com o resultado em mãos, siga os passos 2, 3 e 4 do cálculo do primeiro dígito.
 // O Resultado deve ser igual ao segundo dígito verificador.
 
-String cpf = "111444777";
+String cpf = "111444999";
 List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
 
 List<int> listDigit = [];
 List<int> listDigit2 = [];
+List<int> listMulplicada = [];
 void main(List<String> args) {
   // numbers.forEach((e) {
   for (int j = 2; j <= (numbers.length + 1); j++) {
@@ -28,9 +29,15 @@ void main(List<String> args) {
   for (int i = 0; i <= (numbers.length - 1); i++) {
     listDigit2.add(numbers.elementAt(i));
   }
+  for (int i = 0; i < listDigit2.length; i++) {
+    int Multiplicador = listDigit[i] * listDigit2[i];
+    listMulplicada.add(Multiplicador);
+  }
 
   print(listDigit2);
   print(listDigit);
+  print(listMulplicada);
+
   print(numbers);
 }
 
