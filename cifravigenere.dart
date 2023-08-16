@@ -35,8 +35,8 @@ class CifraVigenere {
 }
 
 void main(List<String> args) {
-  CifraVigenere cifra = CifraVigenere('umasenhaqualquer');
-  String texto = 'olamundodolowercasequefunciona';
+  CifraVigenere cifra = CifraVigenere('p');
+  String texto = 'o';
   String textoCriptografado = cifra.encrypt(texto);
   print(textoCriptografado);
 

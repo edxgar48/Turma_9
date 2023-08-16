@@ -1,15 +1,20 @@
 void main(List<String> args) {
   String cpf = "111444999";
   List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
-  List<int> listDigit = [];
+  // --->>> SAIDA TEM QUE SER = 2,3,4,20,24,28,72,81,90
 
-  for (int i = 0; numbers.length <= 9; i++) {
-    for (int j = 2; numbers.length <= 9; j++) {
-      int novaLista = numbers[i] * j;
-      listDigit.add(novaLista);
+  for (int i = 0; i < numbers.length; i++) {
+    List<int> listDigit = [];
+//  --->>> TEM ERRO AQUI EM BAIXO <<<---
+
+    for (int j = 2; j <= 10; j++) {
+      int isDigit = numbers[i] * j;
+
+      // --->>> POSSIVELMENTE ESTÁ AQUI EM BAIXO O ERRO
+      listDigit.add(isDigit);
+      print(listDigit);
     }
   }
-  print(listDigit);
 }
 //   ------ >>>>>>>   LÓGICA   <<<<<<---------
 //
