@@ -11,20 +11,16 @@
 // 1. Pegaremos os primeiros 10 dígitos do CPF (111.444.777-05) e multiplicamos cada um dos números, da direita para a esquerda por números crescentes a partir do número 2.
 // 2. Com o resultado em mãos, siga os passos 2, 3 e 4 do cálculo do primeiro dígito.
 // O Resultado deve ser igual ao segundo dígito verificador.
-
-String cpf = "131743148"; //- 05
-List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
-
-List<int> listDigit = [];
-List<int> listDigit2 = [];
-List<int> listMultiplicada = [];
 void main(List<String> args) {
-  // numbers.forEach((e) {
-  for (int j = 10; j >= 2; j--) {
-    // int digitos = (e);
-    // digitos = e * j;
+  String cpf = "131743148"; //- 05
+  List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
+
+  List<int> listDigit = [];
+  List<int> listDigit2 = [];
+  List<int> listMultiplicada = [];
+  //for (int k = 2; k < 2; k++) {
+  for (int j = (numbers.length + 1); j >= 2; j--) {
     listDigit.add(j);
-    //print(j);
   }
   for (int i = 0; i <= (numbers.length - 1); i++) {
     listDigit2.add(numbers.elementAt(i));
@@ -33,7 +29,6 @@ void main(List<String> args) {
     int Multiplicador = listDigit[i] * listDigit2[i];
     listMultiplicada.add(Multiplicador);
   }
-  //int getDigit(resto) {
   final sum = listMultiplicada.reduce((a, b) => a + b);
   int resto = (sum % 11);
 
@@ -42,23 +37,10 @@ void main(List<String> args) {
   } else if (resto >= 2) {
     resto == 11 - (sum % 11);
   }
-  //return (resto);
-  //}
-
-  print(sum);
-  //print(getDigit);
+  numbers.add(resto);
+  print(numbers);
   print(resto);
-  print(listDigit2);
-  print(listMultiplicada);
+  //}
+  // print(sum);
+  // print(listMultiplicada);
 }
-
-  // for (int i = 0; i < numbers.length; i++) {
-  //   for (int j = 2; j <= 10; j++) {
-  //     digitos = numbers.elementAt(i) * j;
-
-  //     listDigit.add(digitos);
-  //   }
-  // }
-
-  // print(listDigit);
-  // //print(numbers);
