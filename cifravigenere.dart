@@ -7,7 +7,8 @@ class CifraVigenere {
     _chave = _chave.toLowerCase();
     String saida = "";
     for (int i = 0; i < texto.length; i++) {
-      int deslocamento = (_chave.codeUnitAt(i % _chave.length) - 97) % 26;
+      int deslocamento = (_chave.codeUnitAt(i % _chave.length) - 97) %
+          26; //TESTEI --->>> MUDAR AQUI PARA 32 E COM --->>> toUpperCase() -->>> NÃO FUNCIONOU
 
       int criptografado = texto.codeUnitAt(i) + deslocamento;
 
@@ -34,8 +35,8 @@ class CifraVigenere {
 }
 
 void main(List<String> args) {
-  CifraVigenere cifra = CifraVigenere('pirimpimpin');
-  String texto = 'olamundodolowercasequefunciona';
+  CifraVigenere cifra = CifraVigenere('p');
+  String texto = 'o';
   String textoCriptografado = cifra.encrypt(texto);
   print(textoCriptografado);
 
@@ -48,3 +49,8 @@ void main(List<String> args) {
     print('Ocorreu um Erro na classe');
   }
 }
+
+//dapbjcsdsdadltgrphtfjtujcrxdcp --->>> SAIDA PARA p
+//dtrugclaswydevzopaqfcrucekudvm --->>> SAIDA PARA pirimpimpin
+//dtrugclaswxdevzopaqfcqucekudvm --->>> SAIDA PARA pirimpimpim
+//ixaeyakotilzmyvtueeiyrmudwizdu --->>> SAIDA PARA uma senhaqualquer
