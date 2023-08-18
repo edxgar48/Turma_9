@@ -18,7 +18,7 @@ void main(List<String> args) {
   List<int> listDigit = [];
   List<int> listDigit2 = [];
   List<int> listMultiplicada = [];
-  //for (int k = 2; k < 2; k++) {
+  //for (int k = 1; k < 2; k++) {
   for (int j = (numbers.length + 1); j >= 2; j--) {
     listDigit.add(j);
   }
