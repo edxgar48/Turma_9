@@ -40,24 +40,9 @@ void main(List<String> args) {
       resto = 11 - (resto);
     }
     numbers.add(resto);
-    // print(numbers);
     print(resto);
     print(sum);
-    //print(listMultiplicada);
-    //print(listDigit);
-    // print(listDigit2);
   }
 
   print(numbers);
 }
-
-  // for (int i = 0; i < numbers.length; i++) {
-  //   for (int j = 2; j <= 10; j++) {
-  //     digitos = numbers.elementAt(i) * j;
-
-  //     listDigit.add(digitos);
-  //   }
-  // }
-
-  // print(listDigit);
-  // //print(numbers);
