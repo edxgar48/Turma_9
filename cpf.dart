@@ -14,25 +14,25 @@
 // 2. Com o resultado em mãos, siga os passos 2, 3 e 4 do cálculo do primeiro dígito.
 // O Resultado deve ser igual ao segundo dígito verificador.
 void main(List<String> args) {
-  String cpf = "131743148"; //159755600- 98
+  String cpf = "159755600"; //159755600- 98
   List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
 
-  List<int> listDigit = [];
-  List<int> listDigit2 = [];
-  List<int> listMultiplicada = [];
-  //for (int k = 2; k < 2; k++) {
-  for (int j = (numbers.length + 1); j >= 2; j--) {
-    listDigit.add(j);
-  }
-  for (int i = 0; i <= (numbers.length - 1); i++) {
-    listDigit2.add(numbers.elementAt(i));
-  }
-  for (int i = 0; i < listDigit2.length; i++) {
-    int Multiplicador = listDigit[i] * listDigit2[i];
-    listMultiplicada.add(Multiplicador);
-  }
-  final sum = listMultiplicada.reduce((a, b) => a + b);
-  int resto = (sum % 11);
+  for (int k = 1; k < 3; k++) {
+    List<int> listDigit = [];
+    List<int> listDigit2 = [];
+    List<int> listMultiplicada = [];
+    for (int j = (numbers.length + 1); j >= 2; j--) {
+      listDigit.add(j);
+    }
+    for (int i = 0; i < (numbers.length); i++) {
+      listDigit2.add(numbers.elementAt(i));
+    }
+    for (int i = 0; i < listDigit2.length; i++) {
+      int Multiplicador = listDigit[i] * listDigit2[i];
+      listMultiplicada.add(Multiplicador);
+    }
+    final sum = listMultiplicada.reduce((a, b) => a + b);
+    int resto = (sum % 11);
 
     if (resto < 2) {
       resto = 0;
@@ -40,12 +40,12 @@ void main(List<String> args) {
       resto = 11 - (resto);
     }
     numbers.add(resto);
-    print(numbers);
+    // print(numbers);
     print(resto);
     print(sum);
-    print(listMultiplicada);
-    print(listDigit);
-    print(listDigit2);
+    //print(listMultiplicada);
+    //print(listDigit);
+    // print(listDigit2);
   }
 
   print(numbers);
