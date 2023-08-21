@@ -14,13 +14,13 @@
 // 2. Com o resultado em mãos, siga os passos 2, 3 e 4 do cálculo do primeiro dígito.
 // O Resultado deve ser igual ao segundo dígito verificador.
 void main(List<String> args) {
-  String cpf = "159755600"; //- 98
+  String cpf = "131743148"; //159755600- 98
   List<int> numbers = cpf.split('').map((e) => int.parse(e)).toList();
 
-  List<int> listDigit = [];
-  List<int> listDigit2 = [];
-  List<int> listMultiplicada = [];
-  for (int k = 1; k < 2; k++) {
+  for (int k = 1; k < 3; k++) {
+    List<int> listDigit = [];
+    List<int> listDigit2 = [];
+    List<int> listMultiplicada = [];
     for (int j = (numbers.length + k); j >= 2; j--) {
       listDigit.add(j);
     }
@@ -35,7 +35,7 @@ void main(List<String> args) {
     int resto = (sum % 11);
 
     if (resto < 2) {
-      resto == 0;
+      resto = 0;
     } else {
       resto = 11 - (resto);
     }
