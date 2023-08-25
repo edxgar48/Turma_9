@@ -1,14 +1,19 @@
-// O Mod 10 é um algoritmo para validação de cartões utilizado pela maioria das bandeiras em todo o mundo.
+// O Mod 10 é um algoritmo para validação de cartões utilizado pela maioria das
+// bandeiras em todo o mundo.
 // A seguir mostro como utilizar o algoritmo para validar a numeração do cartão.
 // Para validar o cartão de crédito siga esses passos:
 
 // 1. Separe o último dígito do cartão. Neste caso é o zero.
-// 2. Multiplique a numeração do cartão, número por número, sendo a coluna ímpar por 1 e a coluna par por 2,
-// levando em conta que a primeira coluna inicia-se por 0 (zero). Se o valor da multiplicação tiver dois dígitos,
+// 2. Multiplique a numeração do cartão, número por número,
+// sendo a coluna ímpar por 1 e a coluna par por 2,
+// levando em conta que a primeira coluna inicia-se por 0 (zero).
+// Se o valor da multiplicação tiver dois dígitos,
 // separe e some cada unidade. Em seguida, some todos os valores.
-// 3. Com o resultado anterior, faça uma divisão por 10 para obter o resto da divisão:
+// 3. Com o resultado anterior, faça uma divisão por 10 para obter o resto
+// da divisão:
 // 4. Subtraia o resto da divisão por 10:
-// 5. Faça a verificação do número que foi separado no item 1 com o resultado do item 4. Se os números forem iguais,
+// 5. Faça a verificação do número que foi separado no item 1 com o resultado
+// do item 4. Se os números forem iguais,
 // o cartão é valido, e se forem diferentes, é invalido.
 
 // Para testes, segue dois números de cartão:

@@ -1,4 +1,4 @@
-void bubbleSort(List<int> lista) {
+void BubbleSort(List<int> lista) {
   int tamanho = lista.length;
   for (int i = 0; i < tamanho - 1; i++) {
     for (int j = 0; j < tamanho - i - 1; j++) {
@@ -32,7 +32,7 @@ void main() {
 
   print("Lista original: ${numeros}");
 
-  bubbleSort(numeros);
+  BubbleSort(numeros);
 
   print("Lista ordenada: ${numeros}");
 }
