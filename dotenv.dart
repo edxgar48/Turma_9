@@ -22,10 +22,14 @@ class DotEnv {
   DotEnv(this.files);
   //preciso fazer um tratamento de erro para esse nullable ai embaixo
   static DotEnv? byPath(String path) {
-    final file = File(path);
-    final contents = file.readAsLinesSync();
-    //return null;
-    print(contents);
+    try {
+      final file = File(path);
+      final contents = file.readAsLinesSync();
+      print(contents);
+    } catch (e) {
+      //return null;
+      print('Error: $e');
+    }
   }
 
   int coverage() {
